@@ -1,0 +1,68 @@
+﻿@model IS7012.AST.ParentsBank.Models.Transaction
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Transaction Details</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @*@Html.DisplayNameFor(model => model.TransAccount.OwnerEmail)*@
+            Parent Email
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TransAccount.OwnerEmail)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.TransAccount.OwnerEmail)*@
+            Recipient Email
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TransAccount.RecipientEmail)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.TransactionDate)*@
+            Transaction Date
+        </dt>
+
+        <dd>
+            
+            @Model.getTranDate()
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Amount)*@
+            Transaction Amount
+        </dt>
+
+        <dd>
+            $@Html.DisplayFor(model => model.Amount)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Note)*@
+            Remarks
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Note)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @if (Model.TransAccount.OwnerEmail == User.Identity.Name)
+    {
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id })
+    }
+
+    | @Html.ActionLink("Back to List", "Index")
+</p>

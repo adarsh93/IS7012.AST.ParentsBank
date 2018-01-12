@@ -1,0 +1,130 @@
+﻿
+@{
+    ViewBag.Title = "Financial Resources";
+}
+<head>
+    <style>
+        .thumbnail iframe {
+            width: 1440px;
+            height: 900px;
+            display: block;
+        }
+        .thumbnail {
+            position: relative;
+            display: block;
+            -ms-zoom: 0.25;
+            -moz-transform: scale(0.25);
+            -moz-transform-origin: 0 0;
+            -o-transform: scale(0.25);
+            -o-transform-origin: 0 0;
+            -webkit-transform: scale(0.25);
+            -webkit-transform-origin: 0 0;
+        }
+       
+        .thumbnail:after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
+        .thumbnail-container {
+            width: calc(1440px * 0.25);
+            height: calc(900px * 0.25);
+            display: block;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #Children {
+            /*background-image: url("/Content/Images/Banking-3.jpg");*/
+            background-size: cover;
+        }
+
+    </style>
+</head>
+<h2>How To Save Money?</h2>
+<br />
+
+<div class="jumbotron">
+    
+    <ul class="nav nav-pills">
+        <li class="active"><a data-toggle="pill" href="#Parents">Parents</a></li>
+        <li><a data-toggle="pill" href="#Children">Children</a></li>
+    </ul>
+    <br />  
+    <div class="tab-content">
+        <div id="Parents" class="tab-pane fade in active" >
+            
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Link</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="https://studentaid.ed.gov/sa/resources/parents" target="_blank">Federal Student Aid</a></td>
+                        <td>Throughout this website, you’ll find useful information about paying for college with the federal student aid programs</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://money.usnews.com/money/personal-finance/articles/2011/02/02/5-smart-ways-to-save-money-for-your-children" target="_blank">Save money for children</a></td>
+                        <td> Whether you’re putting money away for college or a rainy day, here’s a guide to making sure it grows. </td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://money.usnews.com/money/blogs/my-money/articles/2016-08-01/teach-your-children-these-5-crucial-personal-finance-lessons" target="_blank">Teach children personal finance</a></td>
+                        <td> Talk about how credit cards function, how money is earned through work and why saving is important. </td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://money.usnews.com/money/blogs/my-money/articles/2017-08-14/save-on-sales-tax-during-back-to-school-shopping?int=personalfinance-rec" target="_blank">Save on sales tax</a></td>
+                        <td> Many state sales tax holidays have passed, but you can still shop tax-free in these places. </td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://www.parents.com/kids/responsibility/money-management/lessons-teach-kids-about-money/" target="_blank">Teach kids about money</a></td>
+                        <td> Want your child to be money-savvy like Warren Buffet? These tips will help your kid learn how to save and manage money. </td>
+                    </tr>
+                 </tbody>
+            </table>
+        </div>
+        <div id="Children" class="tab-pane fade">
+            
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Link</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="http://threesixtyjournalism.org/collection/special-project-moneytalk-financial-tips-teens" target="_blank">Financial Tips for Teens</a></td>
+                        <td>
+                            A team of ThreeSixty reporters scouted out the best approach for teens to an important skill — managing your money.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://www.themint.org/kids/saving-tricks.html" target="_blank"> Saving Tricks</a></td>
+                        <td>
+                            How good a saver are you? Is it easy to save money or is it tough? Here are some simple tricks to help you save money.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.commbank.com.au/personal/can/banking-for-teenagers/saving-tips.html" target="_blank"> Banking for teenagers</a></td>
+                        <td>
+                            Whether you are saving up for a new phone or new clothes. Here are some tips to help you save for something faster.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://www.businessinsider.com/the-craziest-ways-teens-save-money-do-something-hr-block-2013-3" target="_blank"> How NOT to save money</a></td>
+                        <td>
+                            Teens Reveal The Craziest Things They've Done To Make Money
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

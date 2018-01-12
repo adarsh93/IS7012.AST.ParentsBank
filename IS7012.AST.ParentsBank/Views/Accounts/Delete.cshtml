@@ -1,0 +1,69 @@
+﻿@model IS7012.AST.ParentsBank.Models.Account
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+
+<h3>Are you sure you want to delete this Account?</h3>
+<div>
+  
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @*@Html.DisplayNameFor(model => model.OwnerEmail)*@
+            Your Email
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OwnerEmail)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.RecipientEmail)*@
+            Recipient's Email
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecipientEmail)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.RecipientName)*@
+            Recipient's Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecipientName)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.OpenDate)*@
+            Account Open Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OpenDate)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.InterestRate)*@
+            Interest Rate
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InterestRate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

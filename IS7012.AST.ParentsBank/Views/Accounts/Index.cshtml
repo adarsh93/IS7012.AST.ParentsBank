@@ -1,0 +1,99 @@
+﻿@model IEnumerable<IS7012.AST.ParentsBank.Models.Account>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Your Accounts</h2>
+
+<p>
+    Want to open a new Account?
+    @Html.ActionLink("Click Here", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Account ID
+        </th>
+        @*<th>
+            Owner E-mail
+        </th>*@
+        <th>
+            Recipient Name
+        </th>
+        <th>
+            Recipient E-mail
+        </th>
+        
+        <th>
+            Open Date
+        </th>
+        <th>
+           Interest Rate
+        </th>
+        <th>
+            Earned Interest
+        </th>
+        <th>
+            Principal
+
+        </th>
+        <th>
+            Principal with Interest
+
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    var current_bal = @item.CurrentBalance();
+    var ytd_bal_and_int_earned = @item.YearToDateInterestEarned();
+
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.OwnerEmail)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.RecipientName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecipientEmail)
+        </td>
+        
+        <td>
+            @*@Html.DisplayFor(modelItem => item.getOpenDate())*@
+            @item.getOpenDate()
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InterestRate)
+        </td>
+        <td>
+            $@(@ytd_bal_and_int_earned - @current_bal)
+        </td>
+        <td>
+            $@current_bal
+        </td>
+        <td>
+            $@ytd_bal_and_int_earned
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+            @if (item.CurrentBalance() > 0|| item.CurrentBalance() < 0)
+            {
+            @Html.DisplayText("Delete");
+            @Html.Label("Delete");
+            }
+            else
+            {
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            }
+        </td>
+    </tr>
+}
+
+</table>

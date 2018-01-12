@@ -1,0 +1,93 @@
+﻿@model IEnumerable<IS7012.AST.ParentsBank.Models.WishList>
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Search Your Wishlist</h2>
+<br />
+
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.Label("Description", "By Description", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.Editor("Description", new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Cost", "By Price", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.Editor("Cost", new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Search WishList Items" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+    <br />
+}
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Account.OwnerEmail)*@
+            Recipient Name
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.DateAdded)*@
+            Date Added
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Cost)*@
+            Item Cost
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Description)*@
+            Item Description
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Link)*@
+            Item Link
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Purchased)*@
+            Item Purchased?
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Account.RecipientName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateAdded)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Link)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Purchased)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+</body>
+</html>
